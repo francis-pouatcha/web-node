@@ -1,0 +1,25 @@
+[package]
+name = "template-web-service"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+axum = { version = "0.6.1", features = ["http2"] }
+clap = { version = "4.0.19", features = ["derive"] }
+error-stack = "0.2.4"
+hyper = "0.14.22"
+sample-config = { git = "https://github.com/FlixCoder/sample-config", rev = "8d00c5772f04e1340034bb0d44c81f392633bb71", features = ["tracing", "yaml"] }
+serde = { version = "1.0.147", features = ["derive"] }
+serde_with = "2.0.1"
+serde_yaml = "0.9.14"
+sqlx = { version = "0.6.2", features = ["postgres", "runtime-tokio-native-tls"] }
+thiserror = "1.0.37"
+timed-locks = "0.1.1"
+tokio = { version = "1.21.2", features = ["macros", "rt-multi-thread"] }
+tracing = "0.1.37"
+tracing-futures = "0.2.5"
+tracing-subscriber = { version = "0.3.16", features = ["env-filter"] }
+
+[workspace]
+members = ["xtask"]
